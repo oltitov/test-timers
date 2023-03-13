@@ -1,18 +1,18 @@
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 import FormElement from './components/FormElement.vue'
 import TimerItem from './components/TimerItem.vue'
 
-const seconds = ref([]);
+const seconds = ref([])
 
 const addSeconds = (item) => {
-  seconds.value.push(item);
+  seconds.value.push(item)
 }
 </script>
 
 <template>
   <main class="main">
-    <FormElement @add:seconds="addSeconds"/>
+    <FormElement @add:seconds="addSeconds" />
 
     <ul class="main__timers">
       <li v-for="(item, index) in seconds" :key="index">

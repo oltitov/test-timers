@@ -6,8 +6,7 @@
 
     @if (str-index('#{$number}', 'px')) {
       $rem-value: math.div($number, 16px);
-    }
-    @else {
+    } @else {
       $rem-value: math.div($number, 16);
     }
 

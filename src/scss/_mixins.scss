@@ -35,9 +35,14 @@
     }
   }
 
-  background: linear-gradient(to left, map-get($theme-color, "gray-dark") 20%, lighten(map-get($theme-color, "gray-dark"), 5) 50%) right;
+  background: linear-gradient(
+      to left,
+      map-get($theme-color, 'gray-dark') 20%,
+      lighten(map-get($theme-color, 'gray-dark'), 5) 50%
+    )
+    right;
   background-size: 150%;
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
   animation-duration: 2s;
   animation-name: slideRightToLeft;
   animation-iteration-count: infinite;
@@ -81,8 +86,8 @@
 }
 
 @mixin custom-scrollbar {
-  scrollbar-color: #bfbfbf #ffffff;  // Firefox: «цвет ползунка» «цвет полосы скроллбара»/
-  scrollbar-width: thin;  // Firefox: толщина
+  scrollbar-color: #bfbfbf #ffffff; // Firefox: «цвет ползунка» «цвет полосы скроллбара»/
+  scrollbar-width: thin; // Firefox: толщина
 
   // полоса прокрутки (скроллбар)
   &::-webkit-scrollbar {
