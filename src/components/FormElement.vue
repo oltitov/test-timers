@@ -6,11 +6,11 @@ const $emit = defineEmits(['add:seconds'])
 const seconds = ref(0)
 const minutes = ref(0)
 
-const isValidMinute = computed(() => Number.isInteger(minutes.value) && minutes.value % 1 === 0)
-const isValidSeconds = computed(() => Number.isInteger(seconds.value) && seconds.value % 10 === 0)
+const isValidMinute = computed(() => minutes.value % 1 === 0 && minutes.value > 0)
+const isValidSeconds = computed(() => seconds.value % 10 === 0 && seconds.value > 0)
 
 const addSeconds = () => {
-  if (!isValidMinute.value || !isValidSeconds.value) return
+  if (!isValidMinute.value && !isValidSeconds.value) return
   $emit('add:seconds', seconds.value + minutes.value * 60)
 
   seconds.value = 0;
